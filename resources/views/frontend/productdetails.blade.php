@@ -111,19 +111,21 @@
 
 
 
-                                <form action="{{ route('addtocart', $single_product_info->id) }}" method="POST">
-                                    @csrf
-                                <div class="pro-details-quality">
-                                    <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
-                                    </div>
-                                    <div class="pro-details-cart">
-                                        <button class="add-cart" type="submit"> Add To
-                                        Cart</button>
-                                    </div>
-                                </form>
 
-
+                            <div class="pro-details-quality">
+                                <div class="cart-plus-minus">
+                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
+                                </div>
+                                <div class="pro-details-cart">
+                                    {{-- <form action="" method="POST">
+                                        @csrf
+                                    </form> --}}
+                                    @auth
+                                    <a href="{{ route('addtocart', $single_product_info->id) }}" class="add-cart" type="submit"> Add To Cart</a>
+                                    @else
+                                    <a href="{{ route('login') }}" class="add-cart" data-bs-toggle="modal" data-bs-target="#loginActive"> Add To Cart</a>
+                                    @endauth
+                                </div>
 
                                 @auth
                                 {{-- style="color: #fb5d5d" --}}

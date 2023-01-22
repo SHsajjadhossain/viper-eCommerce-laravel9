@@ -82,7 +82,7 @@
                     <div class="col col-lg-auto align-self-center pl-0">
                         <div class="header-actions">
                             @auth
-                                <a href="{{ route('home') }}" class="header-action-btn login-btn"">{{ auth()->user()->name }}</a>
+                                <a href="{{ route('home') }}" class="header-action-btn login-btn">{{ auth()->user()->name }}</a>
                             @else
                                 <a href="{{ route('login') }}" class="header-action-btn login-btn" data-bs-toggle="modal" data-bs-target="#loginActive">Sign In</a>
                             @endauth
