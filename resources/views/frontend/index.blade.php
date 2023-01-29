@@ -13,7 +13,7 @@
                                 <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
                                     <span class="category">Sale 45% Off</span>
                                     <h2 class="title-1">Exclusive New<br> Offer 2021</h2>
-                                    <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark"> Shop
+                                    <a href="{{ route('shop') }}" class="btn btn-lg btn-primary btn-hover-dark"> Shop
                                         Now <i class="fa fa-shopping-basket ml-15px" aria-hidden="true"></i></a>
                                 </div>
                             </div>
@@ -36,7 +36,7 @@
                                 <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
                                     <span class="category">Sale 45% Off</span>
                                     <h2 class="title-1">Exclusive New<br> Offer 2021</h2>
-                                    <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark"> Shop
+                                    <a href="{{ route('shop') }}" class="btn btn-lg btn-primary btn-hover-dark"> Shop
                                         Now <i class="fa fa-shopping-basket ml-15px" aria-hidden="true"></i></a>
                                 </div>
                             </div>
@@ -164,7 +164,7 @@
                             </div>
                         @endforeach
                     </div>
-                    <a href="shop-left-sidebar.html" class="btn btn-lg btn-primary btn-hover-dark m-auto" id="loadMore"> Load More <i
+                    <a href="{{ route('shop') }}" class="btn btn-lg btn-primary btn-hover-dark m-auto" id="loadMore"> View More <i
                             class="fa fa-arrow-right ml-15px" aria-hidden="true"></i></a>
                 </div>
             </div>

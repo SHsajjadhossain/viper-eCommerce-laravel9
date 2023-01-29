@@ -14,6 +14,7 @@
 
     <!-- App css -->
     <link href="{{ asset('dashboard/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <link href="{{ asset('dashboard/assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('dashboard/assets/css/metismenu.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('dashboard/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
@@ -438,6 +439,7 @@
     <script src="{{ asset('dashboard/assets/js/metisMenu.min.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/waves.js') }}"></script>
     <script src="{{ asset('dashboard/assets/js/jquery.slimscroll.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- include summernote css/js -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>

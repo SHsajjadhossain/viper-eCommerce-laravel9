@@ -12,7 +12,7 @@ class FrontendController extends Controller
 {
 
     public function index(){
-        $allproducts = Product::all();
+        $allproducts = Product::latest()->limit('8')->get();
          return view('frontend.index', [
              'categories' => Category::where('status', 'show')->get(),
              'allproducts' => $allproducts,

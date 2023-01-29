@@ -2,8 +2,16 @@
 // wishlists function start
 
 use App\Models\Product;
+use App\Models\Product_thumbnail;
 use App\Models\Rating;
 use App\Models\User;
+
+
+function product_thumbnails($id){
+    return Product_thumbnail::where('product_id', $id)->get();
+}
+
+// Product Thumbnails function end
 
 function allwishlists(){
     return App\Models\Wishlist::where('user_id', auth()->id())->get();

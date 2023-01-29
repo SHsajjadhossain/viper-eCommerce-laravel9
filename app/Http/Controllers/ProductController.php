@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 use Image;
 
 class ProductController extends Controller
@@ -127,9 +128,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($product_id)
     {
-        //
+        return view('product.show',[
+            'single_productinfo' => Product::find($product_id)
+        ]);
     }
 
     /**
@@ -138,9 +141,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($product_id)
     {
-        //
+        return view('product.edit',[
+            'edit_productinfo' => Product::find($product_id),
+            'active_categories' => Category::where('status', 'show')->get()
+        ]);
     }
 
     /**
@@ -150,9 +156,65 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $slug = Str::slug($request->product_name).'-'.Str::random(5).auth()->id();
+
+        Product::findOrFail($id)->update([
+            'category_id' => $request->category_id,
+            'product_name' => $request->product_name,
+            'product_price' => $request->product_price,
+            'product_code' => $request->product_code,
+            'product_quantity' => $request->product_quantity,
+            'product_short_description' => $request->product_short_description,
+            'product_long_description	' => $request->product_long_description,
+            'product_slug' => $slug
+        ]);
+
+
+
+        if ($request->hasFile('new_product_photo')) {
+
+            //Create photo name
+            $new_product_photo_name = time().'_'.Str::random(5).'_'.Auth::id().'.'.$request->file('new_product_photo')->getClientOriginalExtension();
+
+            // delete old photo
+            unlink(base_path('public/uploads/product_photoes/'.Product::find($id)->product_photo));
+
+            // upload new photo
+            Image::make($request->file('new_product_photo'))->resize(270, 310)->save(base_path('public/uploads/product_photoes/'.$new_product_photo_name));
+
+            // update to database
+            Product::find($id)->update([
+                'product_photo' =>  $new_product_photo_name
+            ]);
+
+        }
+
+        return back()->with('success', 'Product Updated Successfully!!');
+
+        // if ($request->hasFile('new_product_thumbnails')) {
+        //     foreach ($request->file('new_product_thumbnails') as  $product_thumbnail) {
+
+        //         //Create thumbnail name
+        //         $new_product_photo_name = time() . '_' . Str::random(5) . '_' . $id . '.' . $product_thumbnail->getClientOriginalExtension();
+
+        //         // delete old photo
+        //         foreach (Product_thumbnail::where('product_id', $id)->get('product_thumbnail_name') as $single_thumbnail) {
+        //             unlink(base_path('public/uploads/product_thumbnails/'.$single_thumbnail));
+        //         }
+
+        //         // photo upload start
+        //         Image::make($product_thumbnail)->resize(800, 800)->save(base_path('public/uploads/product_thumbnails/' . $new_product_photo_name));
+        //         // photo upload end
+
+
+        //         Product_thumbnail::where('product_id', $id)->update([
+        //             'product_thumbnail_name' => $new_product_photo_name,
+        //         ]);
+        //     }
+        // }
+
     }
 
     /**
