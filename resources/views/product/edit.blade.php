@@ -76,7 +76,7 @@
                             <label>New Product Photo</label>
                             <input type="file" class="form-control" name="new_product_photo">
                         </div>
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <label>Old Product Thumbnails</label>
                             <br>
                             @forelse (product_thumbnails($edit_productinfo->id) as $single_thumbnail)
@@ -88,7 +88,7 @@
                         <div class="form-group">
                             <label>New Product Thumbnails</label>
                             <input type="file" class="form-control" name="new_product_thumbnails[]" multiple>
-                        </div> --}}
+                        </div>
 
                         <button type="submit" class="btn btn-primary">Edit Product</button>
                     </form>

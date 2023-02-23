@@ -25,7 +25,8 @@ class VendorController extends Controller
      */
     public function index()
     {
-        //
+        $all_vendor = Vendor::paginate('10');
+        return view('vendor.index', compact('all_vendor'));
     }
 
     /**

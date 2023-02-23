@@ -12,10 +12,12 @@ class FrontendController extends Controller
 {
 
     public function index(){
-        $allproducts = Product::latest()->limit('8')->get();
+        $allproducts = Product::OrderBy('id', 'asc')->limit('8')->get();
+        $new_products = Product::OrderBy('id', 'desc')->limit('4')->get();
          return view('frontend.index', [
              'categories' => Category::where('status', 'show')->get(),
              'allproducts' => $allproducts,
+             'new_products' => $new_products
          ]);
     }
 
@@ -59,5 +61,10 @@ class FrontendController extends Controller
             $products = Product::all();
         }
         return view('shop', compact('products', 'min', 'max'));
+    }
+
+    public function aboutus()
+    {
+        return view('aboutus');
     }
 }

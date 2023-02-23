@@ -21,11 +21,6 @@ class Product extends Model
     ];
 
 
-
-
-
-
-
     function relationtocategory(){
         return $this->hasOne(Category::class, 'id', 'category_id');
     }

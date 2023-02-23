@@ -13,6 +13,8 @@ function product_thumbnails($id){
 
 // Product Thumbnails function end
 
+// wishlists function start
+
 function allwishlists(){
     return App\Models\Wishlist::where('user_id', auth()->id())->get();
 }
@@ -65,4 +67,3 @@ function rating_percentage($product_id)
 
 
 // carts function end
-
