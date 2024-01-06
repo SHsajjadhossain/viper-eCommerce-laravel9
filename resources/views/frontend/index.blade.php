@@ -122,12 +122,13 @@
                         <!-- Tab Start -->
                         <div class="nav-center">
                             <ul class="product-tab-nav nav align-items-center justify-content-center">
-                                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab"
-                                        href="#tab-product--all">All</a></li>
+                                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab-product--all">All</a>
+                                    </li>
                                 </li>
                                 @foreach ($categories as $category)
-                                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                        href="#tab-product-{{ $category->category_name }}">{{ $category->category_name }}</a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-bs-toggle="tab" href="#tab-product-{{ $category->category_name }}">{{ $category->category_name }}</a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </div>
@@ -144,9 +145,13 @@
                         <!-- 1st tab start -->
                         <div class="tab-pane fade show active" id="tab-product--all">
                             <div class="row">
-                                @foreach ($allproducts as $product)
+                                @forelse ( $allproducts as $product )
                                     @include('parts.product_thumb')
-                                @endforeach
+                                @empty
+                                    <div class="alert alert-danger text-center">
+                                        <span class="">No product to show</span>
+                                    </div>
+                                @endforelse
                             </div>
                         </div>
                         <!-- 1st tab end -->
@@ -156,8 +161,8 @@
                                 @forelse (App\Models\Product::where('category_id', $category->id)->get() as $product)
                                     @include('parts.product_thumb')
                                 @empty
-                                    <div class="alert alert-danger">
-                                        No Product To Show
+                                    <div class="alert alert-danger text-center">
+                                        <span>No Product To Show</span>
                                     </div>
                                 @endforelse
                                 </div>
@@ -271,7 +276,11 @@
                                             </div>
                                         </div>
                                     @empty
-
+                                        <div class="col-12">
+                                            <div class="alert alert-danger text-center">
+                                                <span>No Product To Show</span>
+                                            </div>
+                                        </div>
                                     @endforelse
 
                                     {{-- <div class="new-product-item swiper-slide">

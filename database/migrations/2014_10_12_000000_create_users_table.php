@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('profile_photo')->default('default.jpg');
             $table->string('phone_number')->nullable();
-            $table->integer('role')->default('1')->comment('1=customer, 2=admin');
+            $table->integer('role')->default('1')->comment('1=customer, 2=admin, 3= vendor');
             $table->rememberToken();
             $table->timestamps();
         });

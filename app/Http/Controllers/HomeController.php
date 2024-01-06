@@ -40,8 +40,9 @@ class HomeController extends Controller
         }
         return view('home',[
             'total_users' => User::count(),
-            'total_admin' => User::where('role', 2)->count(),
             'total_customer' => User::where('role', 1)->count(),
+            'total_admin' => User::where('role', 2)->count(),
+            'total_vendor' => User::where('role', 3)->count(),
         ]);
     }
 

@@ -385,7 +385,7 @@
                             <h3>Log in your account</h3>
                             <form action="{{ route('login') }}" method="POST">
                                 @csrf
-                                <input type="email" name="email" value="sajjad@live.com" placeholder="Email address" >
+                                <input type="email" name="email" value="admin@admin.com" placeholder="Email address" >
                                 <input type="password" name="password" value="123456789" placeholder="Password">
                                 <div class="remember-forget-wrap">
                                     <div class="remember-wrap">
