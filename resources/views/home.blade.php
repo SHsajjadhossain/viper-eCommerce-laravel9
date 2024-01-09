@@ -36,7 +36,7 @@
                         <div class="card-box mb-0 widget-chart-two">
                             <div class="float-right">
                                 <input data-plugin="knob" data-width="80" data-height="80" data-linecap=round
-                                    data-fgColor="#f9bc0b" value="92" data-skin="tron" data-angleOffset="180"
+                                    data-fgColor="#f9bc0b" value="{{ $total_admin }}" data-skin="tron" data-angleOffset="180"
                                     data-readOnly=true data-thickness=".1" />
                             </div>
                             <div class="widget-chart-two-content">
