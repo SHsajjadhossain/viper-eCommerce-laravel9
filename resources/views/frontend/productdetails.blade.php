@@ -111,7 +111,6 @@
 
 
 
-
                             <div class="pro-details-quality">
                                 <div class="cart-plus-minus">
                                     <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />

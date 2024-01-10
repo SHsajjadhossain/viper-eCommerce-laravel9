@@ -51,7 +51,7 @@
                                     <tr>
                                         <td>Product Long Description</td>
                                         <td>
-                                            {{ $single_productinfo->product_long_description }}
+                                            {!! $single_productinfo->product_long_description !!}
                                         </td>
                                     </tr>
                                     <tr>
