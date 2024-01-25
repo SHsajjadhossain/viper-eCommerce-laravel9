@@ -12,7 +12,7 @@
                             <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 align-self-center sm-center-view">
                                 <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
                                     <span class="category">Sale 45% Off</span>
-                                    <h2 class="title-1">Exclusive New<br> Offer 2023</h2>
+                                    <h2 class="title-1">Exclusive New<br> Offer 2024</h2>
                                     <a href="{{ route('shop') }}" class="btn btn-lg btn-primary btn-hover-dark"> Shop
                                         Now <i class="fa fa-shopping-basket ml-15px" aria-hidden="true"></i></a>
                                 </div>
