@@ -150,9 +150,9 @@
                         <div class="blog-post-video position-relative">
                             <a class="venobox venoboxvid video-icon overflow-hidden vbox-item" data-gall="gall-video"
                                 data-autoplay="true" data-vbtype="video" href="https://youtu.be/Hx64uvCA_zQ">
-                                <img class="img-responsive w-100 thumb-image" src="assets/images/blog-image/1.jpg"
+                                <img class="img-responsive w-100 thumb-image" src="{{ asset('frontend/assets/images/blog-image/1.jpg') }}"
                                     alt="">
-                                <img class="icon" src="assets/images/icons/icon-youtube-play.png" alt="">
+                                <img class="icon" src="{{ asset('frontend/assets/images/icons/icon-youtube-play.png') }}" alt="">
                             </a>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
             <div class="col-lg-6 col-md-6 col-xl-4 mb-50px">
                 <div class="single-blog">
                     <div class="blog-image">
-                        <a href="blog-single-left-sidebar.html"><img src="assets/images/blog-image/2.jpg"
+                        <a href="blog-single-left-sidebar.html"><img src="{{ asset('frontend/assets/images/blog-image/2.jpg') }}"
                                 class="img-responsive w-100" alt=""></a>
                     </div>
                     <div class="blog-text">
@@ -205,7 +205,7 @@
             <div class="col-lg-6 col-md-6 col-xl-4 mb-50px">
                 <div class="single-blog">
                     <div class="blog-image">
-                        <a href="blog-single-left-sidebar.html"><img src="assets/images/blog-image/1.jpg"
+                        <a href="blog-single-left-sidebar.html"><img src="{{ asset('frontend/assets/images/blog-image/1.jpg') }}"
                                 class="img-responsive w-100" alt=""></a>
                     </div>
                     <div class="blog-text">
@@ -231,7 +231,7 @@
             <div class="col-lg-6 col-md-6 col-xl-4 mb-50px">
                 <div class="single-blog">
                     <div class="blog-image">
-                        <a href="blog-single-left-sidebar.html"><img src="assets/images/blog-image/2.jpg"
+                        <a href="blog-single-left-sidebar.html"><img src="{{ asset('frontend/assets/images/blog-image/2.jpg') }}"
                                 class="img-responsive w-100" alt=""></a>
                     </div>
                     <div class="blog-text">
@@ -257,7 +257,7 @@
             <div class="col-lg-6 col-md-6 col-xl-4 mb-50px">
                 <div class="single-blog">
                     <div class="blog-image">
-                        <a href="blog-single-left-sidebar.html"><img src="assets/images/blog-image/3.jpg"
+                        <a href="blog-single-left-sidebar.html"><img src="{{ asset('frontend/assets/images/blog-image/3.jpg') }}"
                                 class="img-responsive w-100" alt=""></a>
                     </div>
                     <div class="blog-text">
