@@ -67,7 +67,7 @@
                                 <li class="dropdown position-static">
                                     <a href="{{ route('shop') }}">Shop </a>
                                 </li>
-                                <li class="dropdown "><a href="#">Blogs</a></li>
+                                <li class="dropdown "><a href="{{ route('blog') }}">Blogs</a></li>
                                 <li><a href="{{ route('aboutus') }}">About us</a></li>
                                 <li><a href="contact.html">Contact us</a></li>
                             </ul>

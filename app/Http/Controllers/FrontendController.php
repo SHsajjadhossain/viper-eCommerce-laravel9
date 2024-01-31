@@ -48,6 +48,10 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function blog() {
+        return view('blog');
+    }
+
     public function shop()
     {
         if (isset($_GET['min_value'])) {

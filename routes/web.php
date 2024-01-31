@@ -24,6 +24,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('frontend');
 
 Route::get('product/details/{slug}', [FrontendController::class, 'productdetails'])->name('productdetails');
 Route::get('categorywise/{category_id}', [FrontendController::class, 'categorywiseproducts'])->name('categorywiseproducts');
+Route::get('/blog', [FrontendController::class, 'blog'])->name('blog');
 Route::get('/shop', [FrontendController::class, 'shop'])->name('shop');
 Route::get('/aboutus', [FrontendController::class, 'aboutus'])->name('aboutus');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
