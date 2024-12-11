@@ -12,7 +12,8 @@ class FrontendController extends Controller
 {
 
     public function index(){
-        $allproducts = Product::OrderBy('id', 'asc')->limit('8')->get();
+        // $allproducts = Product::OrderBy('id', 'asc')->limit('8')->get();
+        $allproducts = Product::OrderBy('id', 'asc')->get();
         $new_products = Product::OrderBy('id', 'desc')->limit('4')->get();
          return view('frontend.index', [
              'categories' => Category::where('status', 'show')->get(),
